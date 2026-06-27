@@ -10,21 +10,22 @@
 
 body{
   font-family:-apple-system,BlinkMacSystemFont,'Hiragino Sans','Yu Gothic UI',sans-serif;
-  background:#4A90E2;
-  min-height:100vh;
-  display:flex;
-  flex-direction:column;
+  background:#fff;
 }
 
 /* NAV */
 nav{
-  padding:20px 32px;
-  display:flex;align-items:center;justify-content:space-between;
+  position:fixed;top:0;left:0;right:0;z-index:999;
+  background:rgba(255,255,255,0.95);
+  backdrop-filter:blur(20px);
+  border-bottom:2px solid #E5E5E5;
+  height:64px;display:flex;align-items:center;
+  padding:0 32px;justify-content:space-between;
 }
 
 .logo{
   font-size:22px;font-weight:900;
-  color:#fff;text-decoration:none;
+  color:#2A3F5F;text-decoration:none;
   display:flex;align-items:center;gap:10px;
 }
 
@@ -33,17 +34,25 @@ nav{
   object-fit:contain;
 }
 
+.btn-primary{
+  background:#4A90E2;color:#fff;
+  padding:12px 24px;font-size:15px;font-weight:900;
+  border-radius:16px;text-decoration:none;
+  box-shadow:0 4px 0 #2A7DD4;
+  transition:opacity 0.15s;
+}
+.btn-primary:hover{opacity:0.9;}
+
 /* HERO */
 .hero{
-  flex:1;
+  min-height:100vh;
+  background:#4A90E2;
   display:flex;align-items:center;justify-content:center;
-  padding:40px 32px 60px;
+  padding:80px 32px 60px;
   text-align:center;
 }
 
-.hero-inner{
-  max-width:560px;
-}
+.hero-inner{max-width:560px;}
 
 .hero-piyo{
   width:200px;height:200px;
@@ -61,39 +70,28 @@ nav{
 
 h1{
   font-size:clamp(36px,7vw,64px);
-  font-weight:900;
-  color:#fff;
-  line-height:1.05;
-  letter-spacing:-2px;
+  font-weight:900;color:#fff;
+  line-height:1.05;letter-spacing:-2px;
   margin-bottom:16px;
 }
 
 .hero-sub{
   font-size:clamp(16px,2.5vw,20px);
   color:rgba(255,255,255,0.8);
-  line-height:1.7;
-  margin-bottom:40px;
+  line-height:1.7;margin-bottom:40px;
 }
 
-/* Apple公式ダウンロードボタン */
 .appstore-btn{
   display:inline-block;
   transition:opacity 0.15s,transform 0.15s;
 }
-
-.appstore-btn:hover{
-  opacity:0.9;
-  transform:translateY(-2px);
-}
-
-.appstore-btn img{
-  height:54px;
-  width:auto;
-}
+.appstore-btn:hover{opacity:0.9;transform:translateY(-2px);}
+.appstore-btn img{height:54px;width:auto;}
 
 /* FOOTER */
 footer{
-  padding:24px 32px;
+  background:#4A90E2;
+  padding:32px;
   text-align:center;
   border-top:1px solid rgba(255,255,255,0.15);
 }
@@ -107,23 +105,22 @@ footer{
   font-size:13px;color:rgba(255,255,255,0.6);
   text-decoration:none;transition:color 0.15s;
 }
-
 .footer-links a:hover{color:#fff;}
-
-.footer-copy{
-  font-size:12px;color:rgba(255,255,255,0.4);
-}
+.footer-copy{font-size:12px;color:rgba(255,255,255,0.4);}
 </style>
 </head>
 <body>
 
+<!-- NAV -->
 <nav>
   <a href="/" class="logo">
     <img src="piyo.png" alt="Piyofit" class="logo-img">
     Piyofit
   </a>
+  <a href="https://apps.apple.com/app/id000000000" class="btn-primary">無料で始める</a>
 </nav>
 
+<!-- HERO -->
 <section class="hero">
   <div class="hero-inner">
     <img src="piyo.png" alt="Piyofit" class="hero-piyo">
@@ -138,6 +135,7 @@ footer{
   </div>
 </section>
 
+<!-- FOOTER -->
 <footer>
   <div class="footer-links">
     <a href="/privacy.html">プライバシーポリシー</a>
